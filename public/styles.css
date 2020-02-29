@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+  --primary-color: #1A1961;
+  --secondary-color: #7159C1;
+  --tertiary-color: #F7DF1E;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color);
+}
+
+header {
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.links {
+  font-size: 22px;
+}
+
+.links a {
+  text-decoration: none;
+  position: relative;
+}
+
+.links a + a {
+  margin-left: 32px;
+  color: #777;
+}
+
+.links a.active {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+.links a:hover::after {
+  width: 100%;
+  transition: width 300ms ease-in-out;
+}
+
+/* === CARD === */
+
+.card {
+  background-color: white;
+  width: 800px;
+  min-height: 400px;
+  margin: 45px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 1);
+  animation: up;
+  animation-duration: 400ms;
+  animation-timing-function: ease-out;
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* === Dataiels === */
+.details {
+  padding: 32px;
+}
+
+.details .item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 0px;
+}
+
+.details .item:last-child {
+  border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777;
+  letter-spacing: 0.7px;
+  font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+  color: #555;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.details h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.details .item span {
+  padding: 8px 16px;
+  background-color: var(--tertiary-color);
+  border-radius: 16px;
+  color: #555;
+  margin-right: 4px;
+  margin-top: 8px;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* === FORM === */
+
+form input {
+  width: 100%;
+  outline: none;
+  color: #555;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+form input[type="radio"] {
+  width: initial;
+  margin-right: 4px;
+}
+
+form input::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+form button[type="submit"],
+a.button {
+  padding: 8px 32px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  margin-top: 32px;
+  width: 100%;
+  font-size: 16px;
+}
+
+a.button {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+}
