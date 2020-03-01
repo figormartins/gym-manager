@@ -1,17 +1,17 @@
 {
   "instructors": [
     {
-      "id": "1",
-      "avatar_url": "https://source.unsplash.com/collection/2315391/500x500",
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
       "name": "Ackerman",
       "birth": 799459200000,
-      "gender": "M",
+      "gender": "F",
       "services": "Musculação, Natação",
       "created_at": 1582983804667
     },
     {
       "id": 2,
-      "avatar_url": "https://source.unsplash.com/collection/2315391/500x500",
+      "avatar_url": "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
       "name": "Kutzy",
       "birth": 1544572800000,
       "gender": "M",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "avatar_url": "https://source.unsplash.com/collection/2315391/500x500",
+      "avatar_url": "https://images.unsplash.com/photo-1550259979-ed79b48d2a30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=704&q=80",
       "name": "Igor",
       "birth": 796003200000,
       "gender": "M",
