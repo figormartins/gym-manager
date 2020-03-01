@@ -1,4 +1,17 @@
 {
+  "members": [
+    {
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Igor",
+      "birth": 954460800000,
+      "gender": "M",
+      "email": "figortmartins@gmail.com",
+      "blood": "O-",
+      "weight": "105",
+      "height": "180"
+    }
+  ],
   "instructors": [
     {
       "id": 1,
@@ -26,6 +39,15 @@
       "gender": "M",
       "services": "Crossfit, Musculação",
       "created_at": 1582984845184
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+      "name": "Lara",
+      "birth": 978134400000,
+      "gender": "F",
+      "services": "Natação",
+      "created_at": 1583028201466
     }
   ]
 }

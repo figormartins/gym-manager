@@ -1,6 +1,6 @@
 const fs = require("fs")
-const data = require("./data.json")
-const { age, date } = require("./utils")
+const data = require("../data.json")
+const { age, date } = require("../utils")
 
 exports.index = (req, res) => {
   return res.render("instructors/index", { instructors: data.instructors })
@@ -25,6 +25,10 @@ exports.show = (req, res) => {
   }
 
   res.render("instructors/show", { instructor })
+}
+
+exports.create = (req, res) => {
+  return res.render("instructors/create")
 }
 
 exports.post = (req, res) => {
@@ -70,7 +74,7 @@ exports.edit = (req, res) => {
 
   const instructor = {
     ...foundInstructor,
-    birth: date(foundInstructor.birth)
+    birth: date(foundInstructor.birth).iso
   }
 
   return res.render("instructors/edit", { instructor })

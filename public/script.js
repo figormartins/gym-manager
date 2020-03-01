@@ -1,14 +1,17 @@
-const modalOverlay = document.querySelector('.modal-overlay')
-const cards = document.querySelectorAll('.card')
+const currentPage = location.pathname
+const menuItems = document.querySelectorAll("header .links a")
 
-for (const card of cards) {
-  card.addEventListener("click", () => {
-    const videoId = card.getAttribute("id")
-    window.location.href = `video?id=${videoId}`
-  })
+for (const item of menuItems) {
+  if (currentPage.includes(item.getAttribute("href"))) {
+    item.classList.add("active")
+  }
 }
 
-document.querySelector('.close-modal').addEventListener("click", () => {
-  modalOverlay.classList.remove("active")
-  modalOverlay.querySelector("iframe").src = ""
+//Mensagem de confirmação de deleção
+const formDelete = document.querySelector("#form-delete")
+formDelete.addEventListener("submit", (event) => {
+  const confirmation = confirm("Deseja deletar?")
+
+  if (!confirmation)
+    event.preventDefault()
 })
