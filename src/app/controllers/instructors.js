@@ -3,18 +3,23 @@ const Instructor = require("../models/Instructor")
 
 module.exports = {
   index(req, res) {
-    const { filter } = req.query
+    let { filter, page, limit } = req.query
 
-    if (filter) {
-      Instructor.findBy(filter, (instructors) => {
+    page = page || 1
+    limit = limit || 2
+    let offset = (page - 1) * limit
+
+    const params = {
+      filter,
+      page,
+      limit,
+      offset,
+      callback(instructors) {
         return res.render("instructors/index", { instructors, filter })
-      })
+      }
     }
-    else {
-      Instructor.all((instructors) => {
-        return res.render("instructors/index", { instructors })
-      })
-    }
+
+    Instructor.paginate(params)
   },
   show(req, res) {
     Instructor.find(req.params.id, (instructor) => {

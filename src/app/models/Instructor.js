@@ -73,7 +73,8 @@ module.exports = {
       data.name,
       date(data.birth).iso,
       data.gender,
-      data.services
+      data.services,
+      data.id
     ]
 
     db.query(query, values, (err, results) => {
@@ -88,6 +89,30 @@ module.exports = {
       if (err) throw `Database error! ${err}`
 
       callback()
+    })
+  },
+  paginate(params) {
+    const { filter, limit, offset, callback } = params
+
+    let query = `
+      SELECT instructors.*, COUNT(members) as total_students
+      FROM instructors
+      LEFT JOIN members on (instructors.id = members.instructor_id)
+    `
+    let filterParam = []
+    
+    if (filter) {
+      query = query + " WHERE instructors.name ILIKE $1 OR instructors.services ILIKE $1 GROUP BY instructors.id LIMIT $2 OFFSET $3"
+      filterParam.push(`%${filter}%`)
+    }
+    else {
+      query = query + " GROUP BY instructors.id LIMIT $1 OFFSET $2"
+    }
+    
+    db.query(query, [...filterParam, limit, offset], (err, results) => {
+      if (err) throw `Database error! ${err}`
+
+      callback(results.rows)
     })
   }
 }
